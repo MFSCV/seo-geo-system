@@ -18,3 +18,9 @@ This is a source preview, not an autonomous connected runtime or evidence of ran
 - Specified shared records, authority, durable operation, independent review, measurement, and controlled learning.
 - Prepared a fourteen-task implementation plan, acceptance scenarios, synthetic examples, and publication/community drafts.
 - Recorded source-tool checks separately from documentation checks and future runtime acceptance.
+
+## Initial publication portability fixes
+
+- Normalize public text files to LF before generating release hashes, matching Git attributes and clean checkouts.
+- Compare manifest paths in POSIX form on both Windows and Linux, with two regression tests.
+- Verify anonymous access, MIT detection and enabled GitHub private vulnerability reporting.

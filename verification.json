@@ -10,18 +10,19 @@
     "connectorSourceRows": 63,
     "operationFamilies": 76,
     "connectorReferences": 190,
-    "files": 106,
+    "files": 107,
     "markdownLinks": 156,
-    "jsonFiles": 14,
+    "jsonFiles": 15,
     "schemaRefs": 25,
     "privacyMatches": 0,
-    "exampleInvariants": 4
+    "exampleInvariants": 4,
+    "manifestFiles": 106
   },
   "tests": {
     "offlineAuditor": 33,
     "localInspector": 12,
-    "repositoryValidator": 12,
-    "totalPassed": 57,
+    "repositoryValidator": 14,
+    "totalPassed": 59,
     "failed": 0
   },
   "manualReview": {
@@ -37,7 +38,9 @@
   },
   "githubActions": {
     "configuration": "Ubuntu and Windows; Python 3.11; read-only contents permission; immutable action refs",
-    "statusAtCommit": "Configured; remote execution will be checked after push"
+    "statusAtCommit": "Portability fixes locally verified, including two Windows-path regression tests; corrected remote run pending",
+    "initialRun": "https://github.com/MFSCV/seo-geo-system/actions/runs/41449121966",
+    "initialResult": "Failed on CSV CRLF-to-LF hash normalization and Windows manifest path separators; causes reproduced locally"
   },
   "notVerified": [
     "Autonomous executor (not implemented)",
@@ -46,5 +49,10 @@
     "Complete JSON Schema conformance; validator checks selected invariants only"
   ],
   "manifest": "PUBLICATION_MANIFEST.json",
-  "result": "PASS within stated local scope"
+  "result": "PASS within stated local scope",
+  "publication": {
+    "firstFullCommit": "d7349a0bc5d5a3bd79bb0ee9fe5b5071a5e36423",
+    "anonymousReadVerified": true,
+    "githubLicenseDetection": "MIT"
+  }
 }

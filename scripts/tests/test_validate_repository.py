@@ -4,7 +4,7 @@ from __future__ import annotations
 from copy import deepcopy
 import importlib.util
 import json
-from pathlib import Path
+from pathlib import Path, PurePosixPath, PureWindowsPath
 import shutil
 import tempfile
 import unittest
@@ -14,6 +14,20 @@ ROOT = SCRIPT.parent.parent
 SPEC = importlib.util.spec_from_file_location('repository_validator', SCRIPT)
 validator = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(validator)
+
+
+class PortablePathTests(unittest.TestCase):
+    def test_manifest_path_uses_forward_slashes_for_windows_checkout(self):
+        root = PureWindowsPath('C:/checkout')
+        path = root / 'docs' / 'runtime' / 'operations.md'
+        self.assertEqual('docs/runtime/operations.md', validator.repository_path(path, root))
+
+    def test_manifest_path_is_identical_across_path_flavours(self):
+        relative = ('catalog', 'connector-operations.csv')
+        windows_root = PureWindowsPath('C:/checkout')
+        posix_root = PurePosixPath('/checkout')
+        self.assertEqual(validator.repository_path(windows_root.joinpath(*relative), windows_root),
+                         validator.repository_path(posix_root.joinpath(*relative), posix_root))
 
 
 class RecordBoundaryTests(unittest.TestCase):

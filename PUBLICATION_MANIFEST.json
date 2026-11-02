@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "date": "2026-11-02",
   "license": "MIT",
-  "scope": "Exact clean public source export; excludes Git metadata and manifest itself",
+  "scope": "Exact clean public source export; LF text, POSIX paths; excludes Git metadata and manifest itself",
   "files": [
     {
       "path": ".gitattributes",
@@ -37,8 +37,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 1456,
-      "sha256": "16af0ecaaa844001bd6642b7a844329789a63dc1339292679cb9dd8b45a510d6"
+      "bytes": 1800,
+      "sha256": "0212c0eb7ffccfcd43de9cb5ee41093951ca1d6a30f957c8b074ecee3527d61e"
     },
     {
       "path": "CODE_OF_CONDUCT.md",
@@ -207,18 +207,18 @@
     },
     {
       "path": "catalog/orchestrator-source-map.csv",
-      "bytes": 16874,
-      "sha256": "337d80e9097ff3523b8b7f96982f14d5b3deadadc9c4982c1806048bb1f240d9"
+      "bytes": 16840,
+      "sha256": "e2c47d2e51aea93cf0c82dac651fe4a0ec502fb0bf967a8b24d2dfed756de2e6"
     },
     {
       "path": "catalog/requirements-traceability.csv",
-      "bytes": 4140,
-      "sha256": "dc39f4d0bb15740d058bd413faa6935eeeeec151268932f4d974d0d5ecbf66ab"
+      "bytes": 4117,
+      "sha256": "a6a56420cf11e4db69ddb0c1d19a0bb7af0bd2ae20167def8a1e8129e84e31d1"
     },
     {
       "path": "catalog/skill-source-map.csv",
-      "bytes": 10296,
-      "sha256": "b00dee252c73a064e42bfe8750417e6a91159c51af9c9d78bd494cd73f9b268c"
+      "bytes": 10274,
+      "sha256": "5b8a82450031db4387228e8b3cb325b6eca84b733c32a23b901e4ce969c50c88"
     },
     {
       "path": "contracts/deployment.example.schema.json",
@@ -303,7 +303,7 @@
     {
       "path": "docs/publication-checklist.md",
       "bytes": 2464,
-      "sha256": "32c655d10d9d81ef3bdd5101d49c10c191ace7739abe6f73d62a9a7968db9b94"
+      "sha256": "33d08ecea869426079c529326387fc4edae43035ffeefdaa95c7ab381b6dbbc4"
     },
     {
       "path": "docs/review-notes.md",
@@ -347,8 +347,8 @@
     },
     {
       "path": "docs/validation.md",
-      "bytes": 3435,
-      "sha256": "b7290591c2e74acfc9e905c9e72fc3329aea2675695116a7af9a9a2b53096242"
+      "bytes": 3871,
+      "sha256": "1149b7f9c1bcf1585ba09e0067db04fb379aba2b07fd011fb6902c6bc0d68bfc"
     },
     {
       "path": "examples/deployment.example.json",
@@ -372,13 +372,13 @@
     },
     {
       "path": "scripts/tests/test_validate_repository.py",
-      "bytes": 4436,
-      "sha256": "6d847a3f634ecfb89a7761854c325f20c8b6caa57039280f9a30f781a1622f92"
+      "bytes": 5215,
+      "sha256": "0b3bc6f0e54a26d7b1e8ef17416f13cd5be9aee3b730011489b99b53b3c9bd02"
     },
     {
       "path": "scripts/validate_repository.py",
-      "bytes": 12518,
-      "sha256": "cbbae61fecc1431e569f35525760a9da575958aa2c2563cf01e6c78a7426d01b"
+      "bytes": 12725,
+      "sha256": "389b66cdebb32fe4579bee9175478d0b6e3d90aaa4cdf15f56abe9310f72735c"
     },
     {
       "path": "skills/seo-geo/SKILL.md",
@@ -412,8 +412,8 @@
     },
     {
       "path": "skills/seo-geo/references/connector-catalog.csv",
-      "bytes": 8876,
-      "sha256": "225cbfe9a7e79761cc14f5c096495ddc14e27a50e12a7c39bf5c224fbbf1bd63"
+      "bytes": 8847,
+      "sha256": "e814a4c903a47d9bdf04d3d8be9d422cc0653bcf7c2a1c3d4f63c26116dc49a7"
     },
     {
       "path": "skills/seo-geo/references/continuous-improvement.md",
@@ -532,8 +532,8 @@
     },
     {
       "path": "verification.json",
-      "bytes": 1722,
-      "sha256": "601127d3f67510177d2633d14b91930b7a9a6da70df35f46f0a679a229b96c35"
+      "bytes": 2182,
+      "sha256": "8c5fc249ca81e9a323d1d87c46ac5f7cce13f813ad3900e15e9e513836faeb7e"
     }
   ]
 }

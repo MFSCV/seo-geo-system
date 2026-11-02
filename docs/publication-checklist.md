@@ -13,8 +13,8 @@ Publication authorization covers a new public repository and open-access distrib
 - [x] Automated private-data/secret checks and manual review completed for the exact candidate.
 - [x] Skill auditor and any adapted observer tests pass on the exported tree.
 - [x] Catalogs, JSON examples, relative links, and source status checked.
-- [ ] Commit created and pushed to the new repository's default branch.
-- [ ] Remote commit, public visibility, license detection, and anonymous source access verified.
+- [x] Commit created and pushed to the new repository's default branch.
+- [x] Remote commit, public visibility, license detection, and anonymous source access verified.
 - [x] GitHub private vulnerability reporting enabled and verified. Branch protection is not configured; no protection or independent-approval guarantee is claimed.
 
 Final verification may be recorded in a separate report to avoid claiming a pass before evidence exists. Preserve that report's commit or manifest reference.

@@ -10,7 +10,7 @@ import argparse
 import csv
 import hashlib
 import json
-from pathlib import Path
+from pathlib import Path, PurePath
 import re
 from collections import Counter
 from urllib.parse import unquote
@@ -23,6 +23,11 @@ PRIVATE_PATTERNS = {
     'private-key': re.compile(r'-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----'),
     'cloud-access-key': re.compile(r'\b(?:AKIA|ASIA)[A-Z0-9]{16}\b'),
 }
+
+
+def repository_path(path: PurePath, root: PurePath) -> str:
+    """Use the same POSIX relative path in manifests on every platform."""
+    return path.relative_to(root).as_posix()
 
 
 def public_files(root: Path):
@@ -59,11 +64,11 @@ def check_local_target(root: Path, source: Path, target: str) -> list[str]:
     rel = unquote(rel.split('?', 1)[0])
     destination = (source.parent / rel).resolve() if rel else source.resolve()
     if not destination.is_relative_to(root.resolve()):
-        return [f'Local link escapes checkout: {source.relative_to(root)} -> {target}']
+        return [f'Local link escapes checkout: {repository_path(source, root)} -> {target}']
     if not destination.exists():
-        return [f'Broken local link: {source.relative_to(root)} -> {target}']
+        return [f'Broken local link: {repository_path(source, root)} -> {target}']
     if frag and destination.suffix == '.md' and unquote(frag) not in heading_anchors(destination.read_text(encoding='utf-8')):
-        return [f'Broken local anchor: {source.relative_to(root)} -> {target}']
+        return [f'Broken local anchor: {repository_path(source, root)} -> {target}']
     return []
 
 
@@ -156,7 +161,7 @@ def validate(root: Path) -> dict:
     files = public_files(root)
     counts.update(files=len(files), markdownLinks=0, jsonFiles=0, schemaRefs=0, privacyMatches=0, exampleInvariants=0)
     for path in files:
-        relative = str(path.relative_to(root))
+        relative = repository_path(path, root)
         if path.is_symlink():
             errors.append(f'Symlink requires explicit export review: {relative}')
             continue
@@ -205,7 +210,7 @@ def validate(root: Path) -> dict:
         try:
             manifest = json.loads(manifest_path.read_text(encoding='utf-8'))
             entries = manifest['files']
-            expected = {str(p.relative_to(root)) for p in files if p != manifest_path}
+            expected = {repository_path(p, root) for p in files if p != manifest_path}
             actual = [entry['path'] for entry in entries]
             require(len(actual) == len(set(actual)) and set(actual) == expected, 'Publication manifest file set mismatch')
             for entry in entries:

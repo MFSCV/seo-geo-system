@@ -35,3 +35,7 @@ Schema-reference resolution and selected invariant checks are **not a complete J
 The marker check is a bounded text scan, not proof that personal data or secrets are absent. It cannot establish ownership, licenses of third-party material, absence of vulnerabilities, correctness of provider claims, live page delivery, search index state, rankings, connector qualification, or autonomous execution. Review these matters against the actual release scope and evidence.
 
 A validation pass is useful only for the checked bytes. Record the candidate commit or publication manifest alongside results. Do not treat an earlier pass as verification of later changes.
+
+## Reproducible text bytes and paths
+
+The public tree uses LF line endings through `.gitattributes`. Publication hashes describe those normalized bytes. Generate a new manifest after editing source files, and compare its POSIX paths with `Path.as_posix()` on every platform. The first hosted run exposed CSV byte normalization and Windows path-separator mistakes; both causes were reproduced and corrected, with path regression tests.
