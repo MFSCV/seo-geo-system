@@ -1,0 +1,23 @@
+requirement_id,requirement,documentation,future_plan_tasks,acceptance
+R01,"Unify skill, O0 and thirteen specialists",docs/integration-design.md;docs/architecture.md,2;3;8,All source files and role IDs have a target; no prompt-only runtime claim
+R02,Produce all authored documentation in English,README.md;CONTRIBUTING.md,1;3;14,English prose and synthetic examples; exact source identifiers retained only for traceability
+R03,Preserve complete source mapping,catalog/skill-source-map.csv;catalog/orchestrator-source-map.csv,1;2,21 and 33 unique source rows; all hashes match
+R04,Preserve all existing scope capabilities,catalog/capabilities.csv,2,144 unique CAP IDs; source statuses distinct from implementation
+R05,Reconcile connector inventories,catalog/connector-operations.csv;catalog/connector-crosswalk.csv,2;10,63 source entries and 190 valid references; 76 proposed operations; no invented API
+R06,Separate method from runtime,docs/architecture.md;docs/configuration.md,3;5;7,Skill-only and offline modes work without models or scheduler
+R07,Use provider-neutral role and adapter boundaries,catalog/agents.csv;docs/runtime/dispatch-and-review.md,8;10,O0/S1–S13 retained; private model/account bindings outside catalog
+R08,Preserve useful existing code and inspect absent core,docs/source-reconciliation.md;docs/runtime/source-gap-analysis.md,1;5;9,Original helper behavior retained; legacy core inspected before bridge or port
+R09,Specify portable future runtime without claiming it exists,docs/architecture.md;docs/implementation-plan.md,6;7;8,Rust design clearly proposed; Python tools retain narrow scope
+R10,Daily observation without idle model calls,docs/runtime/operations.md,7;8;9,No-change uses zero inference; recurrence installed only through qualified native runner
+R11,Controlled recursive improvement,docs/measurement-and-learning.md,12,Measured outcomes and held-out rule promotion; no policy self-escalation
+R12,"Durable evidence, notifications and recovery",docs/runtime/operations.md;docs/contracts/records.md,7;9;13,Observation and notification independent; unknown write reconciled before retry
+R13,Production authority remains native and scoped,docs/runtime/dispatch-and-review.md;docs/contracts/connector-capability.md,6;13,Existing mandate reused; target/field/revision checks enforced outside model
+R14,"Balance security, effectiveness and cost",docs/security-and-effectiveness.md;templates/IMPROVEMENT.md,6;11;13,"Controls show concrete benefit, smallest effective change and UX/cost tradeoff"
+R15,Independent and truthful external review,templates/EXTERNAL_REVIEW_PROMPT.md;docs/runtime/dispatch-and-review.md,8,Real provider attribution and immutable packet; no self-approval or majority-vote proof
+R16,Meaningful search/answer/conversion measurement,docs/measurement-and-learning.md,10;12,Fixed cohorts; numerator/denominator and unknown coverage; API/consumer distinct
+R17,"Prepare reports, audits and improvement documents",templates/REPORT.md;templates/AUDIT.md;templates/IMPROVEMENT.md,11;12,"Evidence, limitations, owners, minimal delta and next evaluation recorded"
+R18,Protect private deployment and customer data,docs/publication-checklist.md;docs/license-decision.md,1;14,Clean allowlisted export; automated and manual review; no raw private archives
+R19,Prepare open-source license and governance,docs/open-source-readiness.md;GOVERNANCE.md;SECURITY.md;CONTRIBUTING.md,14,"Rights holder/license, actual maintainers and staffed private channels adopted before publication"
+R20,"Do not implement, deploy or publish during planning",README.md;CHANGELOG.md;verification.json,14,Only documentation/catalog/schema examples created; operational files and schedules unchanged
+R21,Preserve build and booking safety during future changes,docs/implementation-plan.md;docs/acceptance-scenarios.md,11;13,"Local/platform/live checks distinct; no real booking, hold, charge or notification"
+R22,Keep contract and evidence states precise,docs/contracts/records.md;contracts/record-envelope.schema.json,4,Unknown not zero; source/deployed/index/outcome distinct; reviews bind exact hash

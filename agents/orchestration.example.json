@@ -1,0 +1,169 @@
+{
+  "schemaVersion": "1.0.0",
+  "commonInstruction": "agents/COMMON.md",
+  "roles": [
+    {
+      "id": "O0",
+      "capabilityId": "seo.o0",
+      "name": "SEO GEO AEO Orchestrator",
+      "supervisor": "deployment-coordinator",
+      "instruction": "agents/profiles/O0.md",
+      "executionMode": "on-demand-under-deployment-coordinator",
+      "independentReviewRequired": true,
+      "modelBinding": "deployment-selected"
+    },
+    {
+      "id": "S1",
+      "capabilityId": "seo.s1",
+      "name": "Inventory and Evidence",
+      "supervisor": "O0",
+      "instruction": "agents/profiles/S1.md",
+      "executionMode": "on-demand-under-deployment-coordinator",
+      "independentReviewRequired": true,
+      "modelBinding": "deployment-selected"
+    },
+    {
+      "id": "S2",
+      "capabilityId": "seo.s2",
+      "name": "Technical SEO and Migration",
+      "supervisor": "O0",
+      "instruction": "agents/profiles/S2.md",
+      "executionMode": "on-demand-under-deployment-coordinator",
+      "independentReviewRequired": true,
+      "modelBinding": "deployment-selected"
+    },
+    {
+      "id": "S3",
+      "capabilityId": "seo.s3",
+      "name": "Demand and Keywords",
+      "supervisor": "O0",
+      "instruction": "agents/profiles/S3.md",
+      "executionMode": "on-demand-under-deployment-coordinator",
+      "independentReviewRequired": true,
+      "modelBinding": "deployment-selected"
+    },
+    {
+      "id": "S4",
+      "capabilityId": "seo.s4",
+      "name": "Content AEO and Entities",
+      "supervisor": "O0",
+      "instruction": "agents/profiles/S4.md",
+      "executionMode": "on-demand-under-deployment-coordinator",
+      "independentReviewRequired": true,
+      "modelBinding": "deployment-selected"
+    },
+    {
+      "id": "S5",
+      "capabilityId": "seo.s5",
+      "name": "Localization and Territory",
+      "supervisor": "O0",
+      "instruction": "agents/profiles/S5.md",
+      "executionMode": "on-demand-under-deployment-coordinator",
+      "independentReviewRequired": true,
+      "modelBinding": "deployment-selected"
+    },
+    {
+      "id": "S6",
+      "capabilityId": "seo.s6",
+      "name": "Structured Data and Feeds",
+      "supervisor": "O0",
+      "instruction": "agents/profiles/S6.md",
+      "executionMode": "on-demand-under-deployment-coordinator",
+      "independentReviewRequired": true,
+      "modelBinding": "deployment-selected"
+    },
+    {
+      "id": "S7",
+      "capabilityId": "seo.s7",
+      "name": "GEO and Answer Evaluation",
+      "supervisor": "O0",
+      "instruction": "agents/profiles/S7.md",
+      "executionMode": "on-demand-under-deployment-coordinator",
+      "independentReviewRequired": true,
+      "modelBinding": "deployment-selected"
+    },
+    {
+      "id": "S8",
+      "capabilityId": "seo.s8",
+      "name": "Media Performance and Experience",
+      "supervisor": "O0",
+      "instruction": "agents/profiles/S8.md",
+      "executionMode": "on-demand-under-deployment-coordinator",
+      "independentReviewRequired": true,
+      "modelBinding": "deployment-selected"
+    },
+    {
+      "id": "S9",
+      "capabilityId": "seo.s9",
+      "name": "Authority and Distribution",
+      "supervisor": "O0",
+      "instruction": "agents/profiles/S9.md",
+      "executionMode": "on-demand-under-deployment-coordinator",
+      "independentReviewRequired": true,
+      "modelBinding": "deployment-selected"
+    },
+    {
+      "id": "S10",
+      "capabilityId": "seo.s10",
+      "name": "Measurement and Experimentation",
+      "supervisor": "O0",
+      "instruction": "agents/profiles/S10.md",
+      "executionMode": "on-demand-under-deployment-coordinator",
+      "independentReviewRequired": true,
+      "modelBinding": "deployment-selected"
+    },
+    {
+      "id": "S11",
+      "capabilityId": "seo.s11",
+      "name": "Security Privacy and Policy",
+      "supervisor": "O0",
+      "instruction": "agents/profiles/S11.md",
+      "executionMode": "on-demand-under-deployment-coordinator",
+      "independentReviewRequired": true,
+      "modelBinding": "deployment-selected"
+    },
+    {
+      "id": "S12",
+      "capabilityId": "seo.s12",
+      "name": "Independent Qualification",
+      "supervisor": "O0",
+      "instruction": "agents/profiles/S12.md",
+      "executionMode": "on-demand-under-deployment-coordinator",
+      "independentReviewRequired": false,
+      "modelBinding": "deployment-selected"
+    },
+    {
+      "id": "S13",
+      "capabilityId": "seo.s13",
+      "name": "Documentation and Learning",
+      "supervisor": "O0",
+      "instruction": "agents/profiles/S13.md",
+      "executionMode": "on-demand-under-deployment-coordinator",
+      "independentReviewRequired": true,
+      "modelBinding": "deployment-selected"
+    }
+  ],
+  "execution": {
+    "mode": "N0-N1-on-demand",
+    "websiteWrites": false,
+    "publication": false,
+    "paidApis": false,
+    "autonomousInference": false,
+    "residentModelProcesses": 0,
+    "deterministicReadinessObserver": "tools/observer/observe.py; local configuration and file hashes only"
+  },
+  "limits": {
+    "maxParallelSpecialists": 1,
+    "maxDelegationDepth": 1,
+    "maxRefinementPasses": 2,
+    "safeReadRetries": 2,
+    "maxEscalations": 1,
+    "maxTaskMinutes": 30,
+    "maxModelCallsPerTask": 8,
+    "incrementalPaidBudgetEUR": 0,
+    "maxDailyModelCalls": 0,
+    "zeroIdleInference": true,
+    "reason": "Illustrative conservative limits; deployments must explicitly configure real budgets and authority before inference."
+  },
+  "status": "portable-role-specifications; no inference executor"
+}

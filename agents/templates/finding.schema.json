@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SEO finding envelope (additive; does not replace candidate core contracts)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "site",
+    "resource",
+    "kind",
+    "evidence",
+    "owner",
+    "nextAction",
+    "state",
+    "uncertainty"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "site": {
+      "type": "string"
+    },
+    "resource": {
+      "type": "string"
+    },
+    "kind": {
+      "enum": [
+        "observation",
+        "demonstrated-vulnerability",
+        "hypothesis",
+        "optional-hardening",
+        "false-positive",
+        "opportunity"
+      ]
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "owner": {
+      "type": "string"
+    },
+    "nextAction": {
+      "type": "string"
+    },
+    "state": {
+      "enum": [
+        "observed",
+        "proposed",
+        "blocked",
+        "verified",
+        "inconclusive"
+      ]
+    },
+    "uncertainty": {
+      "type": "string"
+    }
+  }
+}

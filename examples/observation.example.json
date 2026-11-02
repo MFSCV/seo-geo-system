@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "0.1.0",
+  "id": "example-observation-001",
+  "projectId": "example-project",
+  "createdAt": "2026-11-02T12:00:00Z",
+  "producer": {
+    "kind": "tool",
+    "id": "synthetic-capture-auditor",
+    "version": "design-only"
+  },
+  "sourceRefs": [
+    {
+      "sourceType": "synthetic-fixture",
+      "reference": "capture-example-001",
+      "observedAt": "2026-11-02T12:00:00Z"
+    }
+  ],
+  "recordType": "observation",
+  "payload": {
+    "target": "https://example.test/services/example",
+    "collectorVersion": "design-only",
+    "scope": "offline-capture-not-live",
+    "metric": "captured.errorFindingCount",
+    "result": {
+      "outcome": "observed",
+      "value": 0,
+      "denominator": 1
+    },
+    "coverage": "One synthetic capture; no network, engine or production observation."
+  }
+}

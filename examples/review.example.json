@@ -1,0 +1,30 @@
+{
+  "schemaVersion": "0.1.0",
+  "id": "example-review-001",
+  "projectId": "example-project",
+  "createdAt": "2026-11-02T12:00:00Z",
+  "producer": {
+    "kind": "tool",
+    "id": "synthetic-capture-auditor",
+    "version": "design-only"
+  },
+  "sourceRefs": [
+    {
+      "sourceType": "synthetic-fixture",
+      "reference": "capture-example-001",
+      "observedAt": "2026-11-02T12:00:00Z"
+    }
+  ],
+  "recordType": "review",
+  "payload": {
+    "proposalId": "example-proposal-001",
+    "proposalSha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "reviewer": "synthetic-independent-reviewer",
+    "independenceDisclosure": "Synthetic fixture only; no actual reviewer invocation.",
+    "scope": "Schema demonstration only.",
+    "verdict": "inconclusive",
+    "reasons": [
+      "No real proposal or executed review is supplied."
+    ]
+  }
+}

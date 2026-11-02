@@ -1,0 +1,180 @@
+{
+  "$defs": {
+    "Limits": {
+      "additionalProperties": false,
+      "properties": {
+        "maxParallelSpecialists": {
+          "const": 1,
+          "title": "Maxparallelspecialists",
+          "type": "integer"
+        },
+        "maxDelegationDepth": {
+          "const": 1,
+          "title": "Maxdelegationdepth",
+          "type": "integer"
+        },
+        "maxRefinementPasses": {
+          "const": 2,
+          "title": "Maxrefinementpasses",
+          "type": "integer"
+        },
+        "safeReadRetries": {
+          "const": 2,
+          "title": "Safereadretries",
+          "type": "integer"
+        },
+        "maxEscalations": {
+          "const": 1,
+          "title": "Maxescalations",
+          "type": "integer"
+        },
+        "maxTaskMinutes": {
+          "const": 30,
+          "title": "Maxtaskminutes",
+          "type": "integer"
+        },
+        "maxModelCallsPerTask": {
+          "const": 8,
+          "title": "Maxmodelcallspertask",
+          "type": "integer"
+        },
+        "incrementalPaidBudget": {
+          "const": 0,
+          "title": "Incrementalpaidbudget",
+          "type": "integer"
+        },
+        "zeroIdleInference": {
+          "const": true,
+          "title": "Zeroidleinference",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "maxParallelSpecialists",
+        "maxDelegationDepth",
+        "maxRefinementPasses",
+        "safeReadRetries",
+        "maxEscalations",
+        "maxTaskMinutes",
+        "maxModelCallsPerTask",
+        "incrementalPaidBudget",
+        "zeroIdleInference"
+      ],
+      "title": "Limits",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": {
+      "const": "0.1.0-design",
+      "title": "Schemaversion",
+      "type": "string"
+    },
+    "status": {
+      "const": "synthetic-design-example-not-runnable",
+      "title": "Status",
+      "type": "string"
+    },
+    "projectId": {
+      "minLength": 1,
+      "title": "Projectid",
+      "type": "string"
+    },
+    "publicOrigins": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "minItems": 1,
+      "title": "Publicorigins",
+      "type": "array"
+    },
+    "locales": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "minItems": 1,
+      "title": "Locales",
+      "type": "array"
+    },
+    "mode": {
+      "const": "offline",
+      "title": "Mode",
+      "type": "string"
+    },
+    "authority": {
+      "const": "N0-N1",
+      "title": "Authority",
+      "type": "string"
+    },
+    "coordinationBinding": {
+      "const": "unconfigured",
+      "title": "Coordinationbinding",
+      "type": "string"
+    },
+    "writerBinding": {
+      "const": "disabled",
+      "title": "Writerbinding",
+      "type": "string"
+    },
+    "modelBindings": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "maxItems": 0,
+      "title": "Modelbindings",
+      "type": "array"
+    },
+    "connectorBindings": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "maxItems": 0,
+      "title": "Connectorbindings",
+      "type": "array"
+    },
+    "schedulesInstalled": {
+      "const": false,
+      "title": "Schedulesinstalled",
+      "type": "boolean"
+    },
+    "scheduleTimezoneExample": {
+      "const": "UTC",
+      "title": "Scheduletimezoneexample",
+      "type": "string"
+    },
+    "runtimeEvidenceLocation": {
+      "const": "operator-private-workspace",
+      "title": "Runtimeevidencelocation",
+      "type": "string"
+    },
+    "limits": {
+      "$ref": "#/$defs/Limits"
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "status",
+    "projectId",
+    "publicOrigins",
+    "locales",
+    "mode",
+    "authority",
+    "coordinationBinding",
+    "writerBinding",
+    "modelBindings",
+    "connectorBindings",
+    "schedulesInstalled",
+    "scheduleTimezoneExample",
+    "runtimeEvidenceLocation",
+    "limits"
+  ],
+  "title": "Deployment",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:seo-geo-system:design:deployment-example:0.1.0"
+}

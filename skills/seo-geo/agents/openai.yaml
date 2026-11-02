@@ -1,0 +1,13 @@
+interface:
+  display_name: SEO/GEO — Continuous Optimization
+  short_description: Search and AI visibility with evidence-based improvements
+  default_prompt: Use $seo-geo to analyze this site, identify priorities, and prepare verifiable improvements with proportionate security.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

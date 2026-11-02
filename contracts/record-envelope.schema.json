@@ -1,0 +1,890 @@
+{
+  "$defs": {
+    "Finding": {
+      "additionalProperties": false,
+      "properties": {
+        "schemaVersion": {
+          "const": "0.1.0",
+          "title": "Schemaversion",
+          "type": "string"
+        },
+        "id": {
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "projectId": {
+          "minLength": 1,
+          "title": "Projectid",
+          "type": "string"
+        },
+        "createdAt": {
+          "format": "date-time",
+          "title": "Createdat",
+          "type": "string"
+        },
+        "producer": {
+          "$ref": "#/$defs/Producer"
+        },
+        "sourceRefs": {
+          "items": {
+            "$ref": "#/$defs/SourceRef"
+          },
+          "minItems": 1,
+          "title": "Sourcerefs",
+          "type": "array"
+        },
+        "recordType": {
+          "const": "finding",
+          "title": "Recordtype",
+          "type": "string"
+        },
+        "payload": {
+          "$ref": "#/$defs/FindingPayload"
+        }
+      },
+      "required": [
+        "schemaVersion",
+        "id",
+        "projectId",
+        "createdAt",
+        "producer",
+        "sourceRefs",
+        "recordType",
+        "payload"
+      ],
+      "title": "Finding",
+      "type": "object"
+    },
+    "FindingPayload": {
+      "additionalProperties": false,
+      "properties": {
+        "code": {
+          "minLength": 1,
+          "title": "Code",
+          "type": "string"
+        },
+        "target": {
+          "minLength": 1,
+          "title": "Target",
+          "type": "string"
+        },
+        "classification": {
+          "enum": [
+            "demonstrated-issue",
+            "hypothesis",
+            "optional-hardening",
+            "false-positive",
+            "unknown"
+          ],
+          "title": "Classification",
+          "type": "string"
+        },
+        "severity": {
+          "enum": [
+            "critical",
+            "high",
+            "medium",
+            "low",
+            "info"
+          ],
+          "title": "Severity",
+          "type": "string"
+        },
+        "confidence": {
+          "enum": [
+            "high",
+            "medium",
+            "low",
+            "unknown"
+          ],
+          "title": "Confidence",
+          "type": "string"
+        },
+        "observedState": {
+          "minLength": 1,
+          "title": "Observedstate",
+          "type": "string"
+        },
+        "intendedState": {
+          "minLength": 1,
+          "title": "Intendedstate",
+          "type": "string"
+        },
+        "consequence": {
+          "minLength": 1,
+          "title": "Consequence",
+          "type": "string"
+        },
+        "ownerRole": {
+          "enum": [
+            "O0",
+            "S1",
+            "S2",
+            "S3",
+            "S4",
+            "S5",
+            "S6",
+            "S7",
+            "S8",
+            "S9",
+            "S10",
+            "S11",
+            "S12",
+            "S13"
+          ],
+          "title": "Ownerrole",
+          "type": "string"
+        },
+        "nextAction": {
+          "minLength": 1,
+          "title": "Nextaction",
+          "type": "string"
+        }
+      },
+      "required": [
+        "code",
+        "target",
+        "classification",
+        "severity",
+        "confidence",
+        "observedState",
+        "intendedState",
+        "consequence",
+        "ownerRole",
+        "nextAction"
+      ],
+      "title": "FindingPayload",
+      "type": "object"
+    },
+    "Observation": {
+      "additionalProperties": false,
+      "properties": {
+        "schemaVersion": {
+          "const": "0.1.0",
+          "title": "Schemaversion",
+          "type": "string"
+        },
+        "id": {
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "projectId": {
+          "minLength": 1,
+          "title": "Projectid",
+          "type": "string"
+        },
+        "createdAt": {
+          "format": "date-time",
+          "title": "Createdat",
+          "type": "string"
+        },
+        "producer": {
+          "$ref": "#/$defs/Producer"
+        },
+        "sourceRefs": {
+          "items": {
+            "$ref": "#/$defs/SourceRef"
+          },
+          "minItems": 1,
+          "title": "Sourcerefs",
+          "type": "array"
+        },
+        "recordType": {
+          "const": "observation",
+          "title": "Recordtype",
+          "type": "string"
+        },
+        "payload": {
+          "$ref": "#/$defs/ObservationPayload"
+        }
+      },
+      "required": [
+        "schemaVersion",
+        "id",
+        "projectId",
+        "createdAt",
+        "producer",
+        "sourceRefs",
+        "recordType",
+        "payload"
+      ],
+      "title": "Observation",
+      "type": "object"
+    },
+    "ObservationPayload": {
+      "additionalProperties": false,
+      "properties": {
+        "target": {
+          "minLength": 1,
+          "title": "Target",
+          "type": "string"
+        },
+        "collectorVersion": {
+          "minLength": 1,
+          "title": "Collectorversion",
+          "type": "string"
+        },
+        "scope": {
+          "enum": [
+            "offline-capture-not-live",
+            "public-http",
+            "engine-report",
+            "answer-trial",
+            "local-readiness"
+          ],
+          "title": "Scope",
+          "type": "string"
+        },
+        "metric": {
+          "minLength": 1,
+          "title": "Metric",
+          "type": "string"
+        },
+        "result": {
+          "discriminator": {
+            "mapping": {
+              "collection-failed": "#/$defs/Unobserved",
+              "not-applicable": "#/$defs/Unobserved",
+              "observed": "#/$defs/Observed",
+              "unknown": "#/$defs/Unobserved",
+              "withheld": "#/$defs/Unobserved"
+            },
+            "propertyName": "outcome"
+          },
+          "oneOf": [
+            {
+              "$ref": "#/$defs/Observed"
+            },
+            {
+              "$ref": "#/$defs/Unobserved"
+            }
+          ],
+          "title": "Result"
+        },
+        "coverage": {
+          "minLength": 1,
+          "title": "Coverage",
+          "type": "string"
+        }
+      },
+      "required": [
+        "target",
+        "collectorVersion",
+        "scope",
+        "metric",
+        "result",
+        "coverage"
+      ],
+      "title": "ObservationPayload",
+      "type": "object"
+    },
+    "Observed": {
+      "additionalProperties": false,
+      "properties": {
+        "outcome": {
+          "const": "observed",
+          "title": "Outcome",
+          "type": "string"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "integer"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "items": {},
+              "type": "array"
+            },
+            {
+              "additionalProperties": true,
+              "type": "object"
+            }
+          ],
+          "title": "Value"
+        },
+        "denominator": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Denominator"
+        }
+      },
+      "required": [
+        "outcome",
+        "value"
+      ],
+      "title": "Observed",
+      "type": "object"
+    },
+    "Patch": {
+      "additionalProperties": false,
+      "properties": {
+        "target": {
+          "minLength": 1,
+          "title": "Target",
+          "type": "string"
+        },
+        "field": {
+          "minLength": 1,
+          "title": "Field",
+          "type": "string"
+        },
+        "before": {
+          "title": "Before"
+        },
+        "after": {
+          "title": "After"
+        }
+      },
+      "required": [
+        "target",
+        "field",
+        "before",
+        "after"
+      ],
+      "title": "Patch",
+      "type": "object"
+    },
+    "Producer": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "enum": [
+            "human",
+            "tool",
+            "model",
+            "adapter"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "id": {
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "version": {
+          "minLength": 1,
+          "title": "Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind",
+        "id",
+        "version"
+      ],
+      "title": "Producer",
+      "type": "object"
+    },
+    "Proposal": {
+      "additionalProperties": false,
+      "properties": {
+        "schemaVersion": {
+          "const": "0.1.0",
+          "title": "Schemaversion",
+          "type": "string"
+        },
+        "id": {
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "projectId": {
+          "minLength": 1,
+          "title": "Projectid",
+          "type": "string"
+        },
+        "createdAt": {
+          "format": "date-time",
+          "title": "Createdat",
+          "type": "string"
+        },
+        "producer": {
+          "$ref": "#/$defs/Producer"
+        },
+        "sourceRefs": {
+          "items": {
+            "$ref": "#/$defs/SourceRef"
+          },
+          "minItems": 1,
+          "title": "Sourcerefs",
+          "type": "array"
+        },
+        "recordType": {
+          "const": "proposal",
+          "title": "Recordtype",
+          "type": "string"
+        },
+        "payload": {
+          "$ref": "#/$defs/ProposalPayload"
+        }
+      },
+      "required": [
+        "schemaVersion",
+        "id",
+        "projectId",
+        "createdAt",
+        "producer",
+        "sourceRefs",
+        "recordType",
+        "payload"
+      ],
+      "title": "Proposal",
+      "type": "object"
+    },
+    "ProposalPayload": {
+      "additionalProperties": false,
+      "properties": {
+        "baselineSha256": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Baselinesha256",
+          "type": "string"
+        },
+        "operationId": {
+          "minLength": 1,
+          "title": "Operationid",
+          "type": "string"
+        },
+        "findingIds": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Findingids",
+          "type": "array"
+        },
+        "patch": {
+          "items": {
+            "$ref": "#/$defs/Patch"
+          },
+          "minItems": 1,
+          "title": "Patch",
+          "type": "array"
+        },
+        "expectedEffect": {
+          "minLength": 1,
+          "title": "Expectedeffect",
+          "type": "string"
+        },
+        "sideEffects": {
+          "minLength": 1,
+          "title": "Sideeffects",
+          "type": "string"
+        },
+        "checks": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Checks",
+          "type": "array"
+        },
+        "rollback": {
+          "minLength": 1,
+          "title": "Rollback",
+          "type": "string"
+        },
+        "measurementWindow": {
+          "minLength": 1,
+          "title": "Measurementwindow",
+          "type": "string"
+        },
+        "mandateRef": {
+          "minLength": 1,
+          "title": "Mandateref",
+          "type": "string"
+        }
+      },
+      "required": [
+        "baselineSha256",
+        "operationId",
+        "findingIds",
+        "patch",
+        "expectedEffect",
+        "sideEffects",
+        "checks",
+        "rollback",
+        "measurementWindow",
+        "mandateRef"
+      ],
+      "title": "ProposalPayload",
+      "type": "object"
+    },
+    "Receipt": {
+      "additionalProperties": false,
+      "properties": {
+        "schemaVersion": {
+          "const": "0.1.0",
+          "title": "Schemaversion",
+          "type": "string"
+        },
+        "id": {
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "projectId": {
+          "minLength": 1,
+          "title": "Projectid",
+          "type": "string"
+        },
+        "createdAt": {
+          "format": "date-time",
+          "title": "Createdat",
+          "type": "string"
+        },
+        "producer": {
+          "$ref": "#/$defs/Producer"
+        },
+        "sourceRefs": {
+          "items": {
+            "$ref": "#/$defs/SourceRef"
+          },
+          "minItems": 1,
+          "title": "Sourcerefs",
+          "type": "array"
+        },
+        "recordType": {
+          "const": "receipt",
+          "title": "Recordtype",
+          "type": "string"
+        },
+        "payload": {
+          "$ref": "#/$defs/ReceiptPayload"
+        }
+      },
+      "required": [
+        "schemaVersion",
+        "id",
+        "projectId",
+        "createdAt",
+        "producer",
+        "sourceRefs",
+        "recordType",
+        "payload"
+      ],
+      "title": "Receipt",
+      "type": "object"
+    },
+    "ReceiptItem": {
+      "additionalProperties": false,
+      "properties": {
+        "target": {
+          "minLength": 1,
+          "title": "Target",
+          "type": "string"
+        },
+        "outcome": {
+          "enum": [
+            "planned",
+            "accepted",
+            "attempted",
+            "applied",
+            "verified-live",
+            "failed",
+            "partial",
+            "unknown",
+            "refused"
+          ],
+          "title": "Outcome",
+          "type": "string"
+        },
+        "resultRevision": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Resultrevision"
+        },
+        "detail": {
+          "minLength": 1,
+          "title": "Detail",
+          "type": "string"
+        }
+      },
+      "required": [
+        "target",
+        "outcome",
+        "detail"
+      ],
+      "title": "ReceiptItem",
+      "type": "object"
+    },
+    "ReceiptPayload": {
+      "additionalProperties": false,
+      "properties": {
+        "operationId": {
+          "minLength": 1,
+          "title": "Operationid",
+          "type": "string"
+        },
+        "requestId": {
+          "minLength": 1,
+          "title": "Requestid",
+          "type": "string"
+        },
+        "items": {
+          "items": {
+            "$ref": "#/$defs/ReceiptItem"
+          },
+          "minItems": 1,
+          "title": "Items",
+          "type": "array"
+        },
+        "reconciliation": {
+          "minLength": 1,
+          "title": "Reconciliation",
+          "type": "string"
+        }
+      },
+      "required": [
+        "operationId",
+        "requestId",
+        "items",
+        "reconciliation"
+      ],
+      "title": "ReceiptPayload",
+      "type": "object"
+    },
+    "Review": {
+      "additionalProperties": false,
+      "properties": {
+        "schemaVersion": {
+          "const": "0.1.0",
+          "title": "Schemaversion",
+          "type": "string"
+        },
+        "id": {
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "projectId": {
+          "minLength": 1,
+          "title": "Projectid",
+          "type": "string"
+        },
+        "createdAt": {
+          "format": "date-time",
+          "title": "Createdat",
+          "type": "string"
+        },
+        "producer": {
+          "$ref": "#/$defs/Producer"
+        },
+        "sourceRefs": {
+          "items": {
+            "$ref": "#/$defs/SourceRef"
+          },
+          "minItems": 1,
+          "title": "Sourcerefs",
+          "type": "array"
+        },
+        "recordType": {
+          "const": "review",
+          "title": "Recordtype",
+          "type": "string"
+        },
+        "payload": {
+          "$ref": "#/$defs/ReviewPayload"
+        }
+      },
+      "required": [
+        "schemaVersion",
+        "id",
+        "projectId",
+        "createdAt",
+        "producer",
+        "sourceRefs",
+        "recordType",
+        "payload"
+      ],
+      "title": "Review",
+      "type": "object"
+    },
+    "ReviewPayload": {
+      "additionalProperties": false,
+      "properties": {
+        "proposalId": {
+          "minLength": 1,
+          "title": "Proposalid",
+          "type": "string"
+        },
+        "proposalSha256": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Proposalsha256",
+          "type": "string"
+        },
+        "reviewer": {
+          "minLength": 1,
+          "title": "Reviewer",
+          "type": "string"
+        },
+        "independenceDisclosure": {
+          "minLength": 1,
+          "title": "Independencedisclosure",
+          "type": "string"
+        },
+        "scope": {
+          "minLength": 1,
+          "title": "Scope",
+          "type": "string"
+        },
+        "verdict": {
+          "enum": [
+            "accept",
+            "reject",
+            "changes-requested",
+            "inconclusive"
+          ],
+          "title": "Verdict",
+          "type": "string"
+        },
+        "reasons": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Reasons",
+          "type": "array"
+        }
+      },
+      "required": [
+        "proposalId",
+        "proposalSha256",
+        "reviewer",
+        "independenceDisclosure",
+        "scope",
+        "verdict",
+        "reasons"
+      ],
+      "title": "ReviewPayload",
+      "type": "object"
+    },
+    "SourceRef": {
+      "additionalProperties": false,
+      "properties": {
+        "sourceType": {
+          "minLength": 1,
+          "title": "Sourcetype",
+          "type": "string"
+        },
+        "reference": {
+          "minLength": 1,
+          "title": "Reference",
+          "type": "string"
+        },
+        "observedAt": {
+          "format": "date-time",
+          "title": "Observedat",
+          "type": "string"
+        },
+        "sha256": {
+          "anyOf": [
+            {
+              "pattern": "^[a-f0-9]{64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Sha256"
+        }
+      },
+      "required": [
+        "sourceType",
+        "reference",
+        "observedAt"
+      ],
+      "title": "SourceRef",
+      "type": "object"
+    },
+    "Unobserved": {
+      "additionalProperties": false,
+      "properties": {
+        "outcome": {
+          "enum": [
+            "unknown",
+            "not-applicable",
+            "withheld",
+            "collection-failed"
+          ],
+          "title": "Outcome",
+          "type": "string"
+        },
+        "reason": {
+          "minLength": 1,
+          "title": "Reason",
+          "type": "string"
+        }
+      },
+      "required": [
+        "outcome",
+        "reason"
+      ],
+      "title": "Unobserved",
+      "type": "object"
+    }
+  },
+  "discriminator": {
+    "mapping": {
+      "finding": "#/$defs/Finding",
+      "observation": "#/$defs/Observation",
+      "proposal": "#/$defs/Proposal",
+      "receipt": "#/$defs/Receipt",
+      "review": "#/$defs/Review"
+    },
+    "propertyName": "recordType"
+  },
+  "oneOf": [
+    {
+      "$ref": "#/$defs/Observation"
+    },
+    {
+      "$ref": "#/$defs/Finding"
+    },
+    {
+      "$ref": "#/$defs/Proposal"
+    },
+    {
+      "$ref": "#/$defs/Review"
+    },
+    {
+      "$ref": "#/$defs/Receipt"
+    }
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:seo-geo-system:design:record-envelope:0.1.0",
+  "title": "SEO/GEO System design envelope 0.1.0",
+  "description": "Design contract only. Structural validity does not establish authority, evidence truth, clinical competence or runtime implementation."
+}

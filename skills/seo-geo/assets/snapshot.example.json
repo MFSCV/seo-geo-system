@@ -1,0 +1,16 @@
+{
+  "document": {
+    "url": "https://example.test/services/online-assessment",
+    "status": 200,
+    "headers": {
+      "content-type": "text/html; charset=utf-8"
+    },
+    "html": "<!doctype html><html lang=\"en\"><head><title>Example online assessment</title><meta name=\"description\" content=\"Synthetic public service information for the offline auditor example.\"><link rel=\"canonical\" href=\"https://example.test/services/online-assessment\"><script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@type\":\"WebPage\",\"@id\":\"https://example.test/services/online-assessment#page\",\"url\":\"https://example.test/services/online-assessment\"}</script></head><body><h1>Example online assessment</h1><p>Synthetic example, not a clinical offer or live capture.</p></body></html>",
+    "expected": {
+      "indexable": true,
+      "canonical": "https://example.test/services/online-assessment",
+      "locale": "en",
+      "title": "Example online assessment"
+    }
+  }
+}

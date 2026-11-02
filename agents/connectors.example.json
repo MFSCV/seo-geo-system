@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "1.0.0",
+  "planningMatrixEntries": 25,
+  "currentSkillCatalogEntriesReported": 28,
+  "catalogCountsAreNotConnections": true,
+  "items": [
+    {
+      "id": "deployment-coordinator",
+      "state": "unqualified-example",
+      "scopeEvidence": "No live credentials, session, adapter binding or receipt is included in this public export.",
+      "autonomousWriteQualified": false
+    },
+    {
+      "id": "seo-candidate-core",
+      "state": "unqualified-example",
+      "scopeEvidence": "No live credentials, session, adapter binding or receipt is included in this public export.",
+      "autonomousWriteQualified": false
+    },
+    {
+      "id": "public-http",
+      "state": "unqualified-example",
+      "scopeEvidence": "No live credentials, session, adapter binding or receipt is included in this public export.",
+      "autonomousWriteQualified": false
+    },
+    {
+      "id": "wix",
+      "state": "unqualified-example",
+      "scopeEvidence": "No live credentials, session, adapter binding or receipt is included in this public export.",
+      "autonomousWriteQualified": false
+    },
+    {
+      "id": "gsc",
+      "state": "unqualified-example",
+      "scopeEvidence": "No live credentials, session, adapter binding or receipt is included in this public export.",
+      "autonomousWriteQualified": false
+    },
+    {
+      "id": "bing",
+      "state": "unqualified-example",
+      "scopeEvidence": "No live credentials, session, adapter binding or receipt is included in this public export.",
+      "autonomousWriteQualified": false
+    },
+    {
+      "id": "analytics",
+      "state": "unqualified-example",
+      "scopeEvidence": "No live credentials, session, adapter binding or receipt is included in this public export.",
+      "autonomousWriteQualified": false
+    },
+    {
+      "id": "answer-surfaces",
+      "state": "unqualified-example",
+      "scopeEvidence": "No live credentials, session, adapter binding or receipt is included in this public export.",
+      "autonomousWriteQualified": false
+    },
+    {
+      "id": "repo-ci",
+      "state": "unqualified-example",
+      "scopeEvidence": "No live credentials, session, adapter binding or receipt is included in this public export.",
+      "autonomousWriteQualified": false
+    },
+    {
+      "id": "official-docs",
+      "state": "unqualified-example",
+      "scopeEvidence": "No live credentials, session, adapter binding or receipt is included in this public export.",
+      "autonomousWriteQualified": false
+    }
+  ]
+}

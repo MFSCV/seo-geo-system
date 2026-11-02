@@ -1,0 +1,54 @@
+{
+  "schemaVersion": "1.0",
+  "date": "2026-11-02",
+  "scope": "Historical 0.1.0-design checks before public export; not verification of the current public checkout",
+  "documentationChecks": {
+    "sourceFilesMappedAndHashMatched": 54,
+    "capabilities": 144,
+    "roles": 14,
+    "connectorSourceRows": 63,
+    "proposedOperationFamilies": 76,
+    "operationModes": {
+      "read": 50,
+      "write": 26
+    },
+    "connectorReferences": 190,
+    "requirements": 22,
+    "localMarkdownLinksChecked": 56,
+    "contractAnchorsChecked": 120,
+    "jsonFilesParsed": 6,
+    "localSchemaRefsResolved": 25,
+    "privateDeploymentMarkerMatches": 0
+  },
+  "designExampleChecks": {
+    "schemasGeneratedFrom": "Pydantic 2.14.1 models; draft 2020-12 output",
+    "positiveExampleValidations": 4,
+    "negativeCaseValidations": [
+      "unknown-cannot-carry-zero",
+      "unsupported-contract-major",
+      "invalid-review-hash",
+      "example-cannot-claim-schedule"
+    ],
+    "scope": "Design record and synthetic deployment structural checks only; no runtime enforcement."
+  },
+  "existingSourceToolChecks": {
+    "offlineAuditorTestsPassedDuringSourceInspection": 33,
+    "observerHelperTestsPassedDuringSourceInspection": 10,
+    "observerEffectfulModeExecuted": false,
+    "liveConnectorsTested": false,
+    "websiteBuildOrPublicationPerformed": false
+  },
+  "independentReview": {
+    "findings": 5,
+    "status": "corrected and rechecked within documentation scope"
+  },
+  "remainingPublicationDecisions": [
+    "Rights holder and redistribution scope",
+    "Actual license adoption",
+    "Repository owner/name and maintainers",
+    "Staffed security and moderation reporting routes",
+    "Final clean-export review and explicit publication mandate"
+  ],
+  "errors": [],
+  "result": "PASS"
+}

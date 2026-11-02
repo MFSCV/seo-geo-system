@@ -1,0 +1,30 @@
+{
+  "schemaVersion": "0.1.0",
+  "id": "example-observation-002",
+  "projectId": "example-project",
+  "createdAt": "2026-11-02T12:00:00Z",
+  "producer": {
+    "kind": "tool",
+    "id": "synthetic-capture-auditor",
+    "version": "design-only"
+  },
+  "sourceRefs": [
+    {
+      "sourceType": "synthetic-fixture",
+      "reference": "capture-example-001",
+      "observedAt": "2026-11-02T12:00:00Z"
+    }
+  ],
+  "recordType": "observation",
+  "payload": {
+    "target": "https://example.test/services/example",
+    "collectorVersion": "design-only",
+    "scope": "engine-report",
+    "metric": "search.impressions",
+    "result": {
+      "outcome": "unknown",
+      "reason": "No qualified search property binding; this is a design fixture."
+    },
+    "coverage": "No live cells collected."
+  }
+}

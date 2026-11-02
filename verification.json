@@ -1,0 +1,50 @@
+{
+  "version": "0.1.0",
+  "date": "2026-11-02",
+  "scope": "Public skill, agent specifications, design documentation and local source tools; no autonomous runtime or live connector qualification",
+  "repository": "https://github.com/MFSCV/seo-geo-system",
+  "license": "MIT",
+  "localChecks": {
+    "capabilities": 144,
+    "roles": 14,
+    "connectorSourceRows": 63,
+    "operationFamilies": 76,
+    "connectorReferences": 190,
+    "files": 106,
+    "markdownLinks": 156,
+    "jsonFiles": 14,
+    "schemaRefs": 25,
+    "privacyMatches": 0,
+    "exampleInvariants": 4
+  },
+  "tests": {
+    "offlineAuditor": 33,
+    "localInspector": 12,
+    "repositoryValidator": 12,
+    "totalPassed": 57,
+    "failed": 0
+  },
+  "manualReview": {
+    "independentInternalReview": "No publication-blocking issue identified in the current tree",
+    "privateDataScope": "Reviewed clean export only; private source history is not copied",
+    "originalIcon": "Replaced with new original geometric artwork"
+  },
+  "repositorySettings": {
+    "visibility": "public",
+    "defaultBranch": "main",
+    "privateVulnerabilityReporting": true,
+    "branchProtectionConfigured": false
+  },
+  "githubActions": {
+    "configuration": "Ubuntu and Windows; Python 3.11; read-only contents permission; immutable action refs",
+    "statusAtCommit": "Configured; remote execution will be checked after push"
+  },
+  "notVerified": [
+    "Autonomous executor (not implemented)",
+    "Live connectors (not implemented)",
+    "Website deployment or search-index/ranking outcomes",
+    "Complete JSON Schema conformance; validator checks selected invariants only"
+  ],
+  "manifest": "PUBLICATION_MANIFEST.json",
+  "result": "PASS within stated local scope"
+}

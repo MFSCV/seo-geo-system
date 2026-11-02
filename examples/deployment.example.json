@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "0.1.0-design",
+  "status": "synthetic-design-example-not-runnable",
+  "projectId": "example-project",
+  "publicOrigins": [
+    "https://example.test"
+  ],
+  "locales": [
+    "en"
+  ],
+  "mode": "offline",
+  "authority": "N0-N1",
+  "coordinationBinding": "unconfigured",
+  "writerBinding": "disabled",
+  "modelBindings": [],
+  "connectorBindings": [],
+  "schedulesInstalled": false,
+  "scheduleTimezoneExample": "UTC",
+  "runtimeEvidenceLocation": "operator-private-workspace",
+  "limits": {
+    "maxParallelSpecialists": 1,
+    "maxDelegationDepth": 1,
+    "maxRefinementPasses": 2,
+    "safeReadRetries": 2,
+    "maxEscalations": 1,
+    "maxTaskMinutes": 30,
+    "maxModelCallsPerTask": 8,
+    "incrementalPaidBudget": 0,
+    "zeroIdleInference": true
+  }
+}

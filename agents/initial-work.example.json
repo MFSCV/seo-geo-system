@@ -1,0 +1,77 @@
+{
+  "schemaVersion": "1.0.0",
+  "canonicalTracker": "deployment-supplied",
+  "note": "Initial task specifications only; not a state queue or proof of execution.",
+  "items": [
+    {
+      "id": "SEO-AGENTS-01",
+      "role": "S1",
+      "task": "Reconcile the existing project, active routing and package inventory.",
+      "owner": "S1",
+      "initialState": "proposed"
+    },
+    {
+      "id": "SEO-AGENTS-02",
+      "role": "O0",
+      "task": "Qualify a bounded on-demand inference binding with deployment-owned budget accounting.",
+      "owner": "deployment-coordinator",
+      "initialState": "proposed"
+    },
+    {
+      "id": "SEO-AGENTS-03",
+      "role": "S2",
+      "task": "Qualify the existing public HTTP capture capability for the exact authorized site.",
+      "owner": "S2",
+      "initialState": "proposed"
+    },
+    {
+      "id": "SEO-AGENTS-04",
+      "role": "S10",
+      "task": "Qualify the exact search-console property and comparable query/page exports.",
+      "owner": "S10",
+      "initialState": "proposed"
+    },
+    {
+      "id": "SEO-AGENTS-05",
+      "role": "S2",
+      "task": "Revalidate historical noindex, sitemap and legacy-URL findings against the current release.",
+      "owner": "S2",
+      "initialState": "proposed"
+    },
+    {
+      "id": "SEO-AGENTS-06",
+      "role": "S4",
+      "task": "Prepare one editorial service landing brief with accepted facts and a direct transaction entry point.",
+      "owner": "S4",
+      "initialState": "proposed"
+    },
+    {
+      "id": "SEO-AGENTS-07",
+      "role": "S7",
+      "task": "Freeze query/prompt cohorts and qualify actual answer measurement surfaces.",
+      "owner": "S7",
+      "initialState": "proposed"
+    },
+    {
+      "id": "SEO-AGENTS-08",
+      "role": "S11",
+      "task": "Qualify acquisition data categories, purpose and consent-compatible aggregate measurement.",
+      "owner": "S11",
+      "initialState": "proposed"
+    },
+    {
+      "id": "SEO-AGENTS-09",
+      "role": "S12",
+      "task": "Independently review the first proposal, including builds, final HTML and nontransactional CTA smoke checks.",
+      "owner": "S12",
+      "initialState": "proposed"
+    },
+    {
+      "id": "SEO-AGENTS-10",
+      "role": "S13",
+      "task": "Review primary-source changes before using mutable rules; reconcile connector catalogs by operation.",
+      "owner": "S13",
+      "initialState": "proposed"
+    }
+  ]
+}
